@@ -46,26 +46,27 @@ Pseudocode
     Create an action client named "action_client" of type PlanningAction
     Wait for the action server to start
 
-    # Main loop
+    # loop
     While the ROS node is not shut down:
-    # Get user input
-    Prompt the user to enter a target position or "c" to cancel the goal
-    Read the user input for x and y coordinates
+        # Get user input
+        Prompt the user to enter a target position or "c" to cancel the goal
+        Read the user input for x and y coordinates
 
-    # Convert user input to floats
-    Convert the x and y coordinates from strings to floats
+        # Convert user input to floats
+        Convert the x and y coordinates from strings to floats
 
-    # Create a goal message
-    Create a PlanningGoal message
-    Set the x and y coordinates of the target position in the goal message
+        # Create a goal message
+        Create a PlanningGoal message
+        Set the x and y coordinates of the target position in the goal message
 
-    # Send the goal message to the action server
-    Send the goal message to the action client
+        # Send the goal message to the action server
+        Send the goal message to the action client
 
-    # Check if the goal is canceled
-    If the user entered "c":
-        Call the action_client.cancel_goal() method to cancel the goal
-
+        # Check if the goal is canceled
+        If the user entered "c":
+            Call the action_client.cancel_goal() method to cancel the goal
+    # main function 
+    decleare the main function
     # Spin the node
     Spin the node to process incoming messages
     End
