@@ -33,21 +33,21 @@ In our package, there are six Python files, each serving as a distinct node.
 
 Pseudocode 
 ----------
-Start
+    Start
 
-# Initialize the ROS node and publisher
-Create a ROS node named "action_client_Node_A"
-Create a publisher named "velxz_posxy" of type Vel_pos
+    # Initialize the ROS node and publisher
+    Create a ROS node named "action_client_Node_A"
+    Create a publisher named "velxz_posxy" of type Vel_pos
 
-# Subscribe to the "/odom" topic
-Create a subscriber named "sub_from_Odom" to the "/odom" topic
+    # Subscribe to the "/odom" topic
+    Create a subscriber named "sub_from_Odom" to the "/odom" topic
 
-# Start the action client
-Create an action client named "action_client" of type PlanningAction
-Wait for the action server to start
+    # Start the action client
+    Create an action client named "action_client" of type PlanningAction
+    Wait for the action server to start
 
-# Main loop
-While the ROS node is not shut down:
+    # Main loop
+    While the ROS node is not shut down:
     # Get user input
     Prompt the user to enter a target position or "c" to cancel the goal
     Read the user input for x and y coordinates
@@ -68,8 +68,8 @@ While the ROS node is not shut down:
 
     # Spin the node
     Spin the node to process incoming messages
+    End
 
-End
 5.
 6. 
 
