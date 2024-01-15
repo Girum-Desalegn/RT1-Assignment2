@@ -1,4 +1,4 @@
-Assignment_2 Two-wheelded mobile robot
+Assignment_2 The two-wheelded mobile robot
 ======================================
 
 This assignment involves the movement of a two-wheeled mobile robot within a predefined area. The robot is constrained by a blocking task, preventing it from moving until it reaches the specified target.
@@ -105,7 +105,7 @@ catkin_make
 Launch the simulation and all the required nodes. 
 ```bash
 source /root/Assignment_2/devel/setup.bash
-roslaunch assignment_2_2003 assignment2.launch
+roslaunch assignment_2_2023 assignment2.launch
 ```
 Conclusion
 ----------
