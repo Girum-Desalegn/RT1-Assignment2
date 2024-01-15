@@ -92,7 +92,7 @@ Here is a roslaunch file >*assignment2.launch*
     </launch>
 Installation and Running Procedure
 ----------------------------------
-Clone the package repository in the src folder of assignment_2_2023
+Clone the package repository in the src/assignment_2_2023
 
 ```bash
 git clone https://github.com/Girum-Desalegn/RT1-Assignment2.git
