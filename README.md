@@ -71,8 +71,41 @@ Pseudocode
     Spin the node to process incoming messages
     End
 
-5.
-6. 
+5.**Service_return_Node_B**: This Python script creates a service node that, when called, provides the coordinates of the last target sent by the user.
+6.**Service_subscriber_Node_C**: This script represents another service node, which subscribes to the robot’s position and velocity through a custom message. It implements a server functionality to fetch the distance between the robot and the target, as well as the robot’s average speed.
 
 launch file
 -----------
+A ROS launch file simplifies the startup of various components in your ROS system. It allows you to define parameters, start nodes, group them with prefixes, and use conditional statements. You can organize multiple launch files within one, enabling quick deployment for different robot startup modes. The roslaunch tool facilitates the effortless launch of multiple ROS nodes, locally adjusting parameters on the Parameter Server and automatically respawning processes if needed.
+Here is a roslaunch file >*assignment2.launch*
+
+    <?xml version="1.0"?>
+    <launch>
+        <include file="$(find assignment_2_2023)/launch/sim_w1.launch" />
+        <param name="des_pos_x" value= "0.0" />
+        <param name="des_pos_y" value= "1.0" />
+        <param name="frequency" type="double" value="1.0" /> 
+        <node pkg="assignment_2_2023" type="wall_follow_service.py" name="wall_follower" />
+        <node pkg="assignment_2_2023" type="go_to_point_service.py" name="go_to_point"  />
+        <node pkg="assignment_2_2023" type="bug_as.py" name="bug_action_service" output="screen" />
+        <node pkg="assignment_2_2023" type="action_client_Node_A.py" name="action_client_Node_A" output="screen"  />
+    </launch>
+Installation and Running Procedure
+----------------------------------
+Clone the package repository in the src folder of assignment_2_2023
+
+```bash
+git clone https://github.com/Girum-Desalegn/RT1-Assignment2.git
+```
+Build the workspace in your root folder
+
+```bash
+catkin_make 
+```
+Launch the simulation and all the required nodes. 
+```bash
+source /root/Assignment_2/devel/setup.bash
+roslaunch assignment_2_2003 assignment2.launch
+```
+Conclusion
+----------
