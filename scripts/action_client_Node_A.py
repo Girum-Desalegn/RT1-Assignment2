@@ -9,7 +9,7 @@
 
 This node manages user interaction to input coordinates (x, y) or cancel a target location for the robot. It establishes a publisher (*pub*) responsible for broadcasting a custom message (*Velxz_posxy*) on the *velxz_posxy* topic.
 
-The custom message encompasses four fields*msg_pos_x*, *msg_pos_y*, *msg_vel_x*, and *msg_vel_z*which convey the robot's position and velocity.
+The custom message encompasses four fields *msg_pos_x*, *msg_pos_y*, *msg_vel_x*, and *msg_vel_z* which convey the robot's position and velocity.
 
 Subscribes to:
    /odom

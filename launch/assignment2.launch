@@ -9,4 +9,6 @@
     <node pkg="assignment_2_2023" type="go_to_point_service.py" name="go_to_point"  />
     <node pkg="assignment_2_2023" type="bug_as.py" name="bug_action_service" output="screen" />
     <node pkg="assignment_2_2023" type="action_client_Node_A.py" name="action_client_Node_A" output="screen"  />
+    <node pkg="assignment_2_2023" type="service_return_Node_B.py" name="service_return_Node_B" output="screen"  />
+    
 </launch>
