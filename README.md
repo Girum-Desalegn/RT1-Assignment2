@@ -72,6 +72,7 @@ Pseudocode
     End
 
 5.**Service_return_Node_B**: This Python script creates a service node that, when called, provides the coordinates of the last target sent by the user.
+
 6.**Service_subscriber_Node_C**: This script represents another service node, which subscribes to the robot’s position and velocity through a custom message. It implements a server functionality to fetch the distance between the robot and the target, as well as the robot’s average speed.
 
 launch file
@@ -117,7 +118,8 @@ roslaunch assignment_2_2023 assignment2.launch
 ```
 Further improvement
 -------------------
-The node developed in this assignment solely takes the desired target position of the moving robot. However, it would be more beneficial if the node incorporated the desired velocity, as this would facilitate smoother and more accurate movement. Moreover, employing an algorithm other than the bug 0 algorithm is recommended for enhanced robot movement precision
+The node developed in this assignment solely takes the desired target position of the moving robot. However, it would be more beneficial if the node incorporated the desired velocity, as this would facilitate smoother and more accurate movement. Moreover, employing an algorithm other than the bug 0 algorithm is recommended for enhanced robot movement precision.
+
 Conclusion
 ----------
 We have developed a package that contains three distinct nodes, each responsible for a specific task. The first node implements an action client, allowing the user to set or cancel a target. Based on these inputs, it also publishes the robot's position and velocity as a custom message on a designated topic. The second node is a service node that, when invoked, returns the coordinates of the last target specified by the user. The third service node, upon subscribing to the robot's position and velocity (custom message), calculates and reports the robot's average speed and distance from the target. To facilitate the launch of the entire simulation environment and our six different nodes, we also created a launch file.
