@@ -71,9 +71,8 @@ Pseudocode
     Spin the node to process incoming messages
     End
 
-5.**Service_return_Node_B**: This Python script creates a service node that, when called, provides the coordinates of the last target sent by the user.
-
-6.**Service_subscriber_Node_C**: This script represents another service node, which subscribes to the robot’s position and velocity through a custom message. It implements a server functionality to fetch the distance between the robot and the target, as well as the robot’s average speed.
+5. **Service_return_Node_B**: This Python script creates a service node that, when called, provides the coordinates of the last target sent by the user.
+6. **Service_subscriber_Node_C**: This script represents another service node, which subscribes to the robot’s position and velocity through a custom message. It implements a server functionality to fetch the distance between the robot and the target, as well as the robot’s average speed.
 
 launch file
 -----------
