@@ -13,7 +13,7 @@ Create a new package, in which you will develop three nodes:
 feedback/status of the action server to know when the target has been reached. The node also publishesthe
 robot position and velocity as a custom message (x,y, vel_x, vel_z), by relying on the values published on the
 topic /odom;
-- (b) A service node that, when called, returnsthe coordinates of the last target sent by the user;
+- (b) A service node that, when called, returns the coordinates of the last target sent by the user.
 - (c) Anotherservice node thatsubscribes to the robot’s position and velocity (using the custom message) and
 implements a server to retrieve the distance of the robot from the target and the robot’s average speed.
 
@@ -84,11 +84,15 @@ Here is a roslaunch file >*assignment2.launch*
         <include file="$(find assignment_2_2023)/launch/sim_w1.launch" />
         <param name="des_pos_x" value= "0.0" />
         <param name="des_pos_y" value= "1.0" />
-        <param name="frequency" type="double" value="1.0" /> 
+        <param name="frequency" type="double" value="1.0" />
+        
         <node pkg="assignment_2_2023" type="wall_follow_service.py" name="wall_follower" />
         <node pkg="assignment_2_2023" type="go_to_point_service.py" name="go_to_point"  />
         <node pkg="assignment_2_2023" type="bug_as.py" name="bug_action_service" output="screen" />
-        <node pkg="assignment_2_2023" type="action_client_Node_A.py" name="action_client_Node_A" output="screen"  />
+        <node pkg="assignment_2_2023" type="action_client_Node_A.py" name="action_client_Node_A" output="screen" launch-prefix="xterm -hold -e" />
+        <node pkg="assignment_2_2023" type="service_return_Node_B.py" name="service_return_Node_B" />
+        <node pkg="assignment_2_2023" type="service_subscriber_Node_C.py" name="service_subscriber_Node_C" />
+        
     </launch>
 Installation and Running Procedure
 ----------------------------------
@@ -96,6 +100,10 @@ Clone the package repository in the src/assignment_2_2023
 
 ```bash
 git clone https://github.com/Girum-Desalegn/RT1-Assignment2.git
+```
+Install the xterm library
+```bash
+sudo apt-get install xterm -y
 ```
 Build the workspace in your root folder
 
@@ -107,5 +115,9 @@ Launch the simulation and all the required nodes.
 source /root/Assignment_2/devel/setup.bash
 roslaunch assignment_2_2023 assignment2.launch
 ```
+Further improvement
+-------------------
+The node developed in this assignment solely takes the desired target position of the moving robot. However, it would be more beneficial if the node incorporated the desired velocity, as this would facilitate smoother and more accurate movement. Moreover, employing an algorithm other than the bug 0 algorithm is recommended for enhanced robot movement precision
 Conclusion
 ----------
+We have developed a package that contains three distinct nodes, each responsible for a specific task. The first node implements an action client, allowing the user to set or cancel a target. Based on these inputs, it also publishes the robot's position and velocity as a custom message on a designated topic. The second node is a service node that, when invoked, returns the coordinates of the last target specified by the user. The third service node, upon subscribing to the robot's position and velocity (custom message), calculates and reports the robot's average speed and distance from the target. To facilitate the launch of the entire simulation environment and our six different nodes, we also created a launch file.
