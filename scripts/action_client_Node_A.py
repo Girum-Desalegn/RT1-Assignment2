@@ -79,7 +79,7 @@ def action_client():
 
     while not rospy.is_shutdown():
         # Ready the computer keyboard inputs
-        print(Fore.WHITE + "Please enter the desired input of target position or type c to cancel it ")
+        print(Fore.BLUE + "Please enter the desired input of target position or type c to cancel it ")
             
         x_input_position = input(Fore.GREEN + "Position X: ")
         

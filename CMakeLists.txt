@@ -65,7 +65,7 @@ add_message_files(
  add_service_files(
    FILES
    Return.srv
-#   Service2.srv
+   Average.srv
  )
 
 ## Generate actions in the 'action' folder
